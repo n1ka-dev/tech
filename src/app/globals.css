@@ -31,3 +31,295 @@ body {
     text-wrap: balance;
   }
 }
+@layer base {
+    @font-face {
+        font-family: 'inter';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url('/fonts/Inter-display-regular.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: 'DelaGothicOne';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url('/fonts/DelaGothicOne-Regular.woff2') format('woff2');
+    }
+}
+.menu-icon {
+    margin: 11px 1px auto;
+    width: 20px;
+    height: 14px;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-icon span {
+    background-color: #fff;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.menu-icon span:first-child {
+    top: 0;
+}
+
+.menu-icon span:nth-child(2) {
+    top: 6px;
+}
+
+.menu-icon span:last-child {
+    top: 12px;
+}
+
+.menu-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.open span:first-child,
+.menu-icon.open span:last-child {
+    top: 6px;
+    background-color: red;
+}
+
+.menu-icon.open span:first-child {
+    transform: rotate(45deg);
+}
+
+.menu-icon.open span:last-child {
+    transform: rotate(-45deg);
+}
+
+.menu-items {
+    display: none;
+    top: 100%;
+    border: 1px #D9D9D9 solid;
+    padding: 20px 25px 20px 24px;
+    margin: 6px -8px 0 6px;
+    font-size: 17px;
+    background: linear-gradient(277.59deg, rgba(43, 41, 41, 0.95) 72.57%, rgba(117, 107, 107, 0.95) 144.11%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 22px;
+    transition: all 0.3s ease;
+}
+
+.menu-items.open {
+    display: block
+}
+
+.menu-items li a {
+    display: block;
+    padding: 2px 7px 7px 1px;
+}
+
+.menu-items li a:hover {
+    text-decoration: underline
+}
+
+.shadow-line {
+    display: block;
+    height: 1px;
+    background-color: #D9D9D9;
+    margin: 5px 0 13px;
+}
+
+h1 {
+    letter-spacing: 3px;
+}
+
+.btn {
+    font-size: 18px;
+    padding-left: 33px;
+    padding-right: 31px;
+}
+
+.car-info, .see-all {
+    border-radius: 22px;
+    border: 1px solid #717171;
+}
+
+.car-info::after {
+    content: "";
+    filter: blur(15px);
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    backdrop-filter: blur(15px);
+    background: linear-gradient(277.59deg, rgba(61, 61, 61, 0.2) 20.4%, rgba(167, 167, 167, 0.2) 144.11%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 22px;
+
+}
+
+
+.colorful-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.colorful-shadow {
+    box-shadow: 0px 2px 4px rgba(11, 251, 211), 0px -2px 4px rgba(252, 85, 188);
+}
+
+.detail::after {
+    content: url('/img/arrow.svg');
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 18px;
+    height: 19px;
+    margin: auto;
+}
+
+.car-slider::before {
+    content: url('/img/small-light.svg');
+    position: absolute;
+    left: 42%;
+    width: 3px;
+    height: 732px;
+    margin: auto;
+    bottom: 0;
+    z-index: -15;
+}
+
+.car-slider::after {
+    content: url('/img/big-light.svg');
+    position: absolute;
+    left: calc(42% + 350px);
+    width: 3px;
+    height: 828px;
+    margin: auto;
+    bottom: 0;
+    z-index: -15;
+}
+
+
+/****/
+.question:after, .select-selected::after {
+    content: url("/img/arrow-select.png");
+    position: absolute;
+    right: 16px;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.question.answer-opened:after, .select-selected.select-arrow-active:after {
+    transform: rotate(-180deg);
+}
+
+/* style the items (options), including the selected item: */
+.select-items div, .select-selected {
+    color: #ffffff;
+    border: 1px solid #717171;
+    cursor: pointer;
+    font-size: 17px;
+    line-height: 34px;
+    padding: 8px 62px 9px 16px;
+}
+
+.select-items div {
+    background: linear-gradient(277.59deg, rgba(43, 41, 41, 0.95) 72.57%, rgba(117, 107, 107, 0.95) 144.11%);
+    padding-right: 8px
+}
+
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.apply-filter:after {
+    content: url("/img/filtr.png");
+    width: 18px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.see-all {
+    padding: 0.75rem 1.7rem 0.75rem 1.1rem;
+}
+
+.city-point {
+    padding: 4px;
+    width: 205px;
+    text-align: center;
+}
+
+a.active-head-tab {
+    border-bottom: 1px solid;
+}
+
+.answer-block.leading-normal {
+    padding: 7px 3px;
+    line-height: normal;
+}
+
+.question:not(.answer-opened) .answer-block {
+    display: none
+}
+
+.tab-block:not(.active-tab) {
+    display: none
+}
+
+.bg-vk {
+    background: url('/img/vk-black.svg') no-repeat center center #D7D7D7;
+}
+
+@media (max-width: 1024px) {
+    .car-slider::after {
+        left: calc(35% + 350px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .car-preview .car-img {
+        min-height: 250px;
+        max-width: 486px
+    }
+
+    .select-items div, .select-selected {
+        line-height: normal;
+        height: 55px
+    }
+}
+
+@media (min-width: 1440px) {
+    .car-preview .car-img {
+        min-height: 331.95px;
+        max-width: 645px
+    }
+}
