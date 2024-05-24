@@ -47,6 +47,7 @@ body {
         src: url('/fonts/DelaGothicOne-Regular.woff2') format('woff2');
     }
 }
+input{color: #000}
 .menu-icon {
     margin: 11px 1px auto;
     width: 20px;
@@ -190,7 +191,7 @@ h1 {
     height: 732px;
     margin: auto;
     bottom: 0;
-    z-index: -15;
+    z-index: 1;
 }
 
 .car-slider::after {
@@ -201,7 +202,7 @@ h1 {
     height: 828px;
     margin: auto;
     bottom: 0;
-    z-index: -15;
+    z-index: 1;
 }
 
 
@@ -278,20 +279,16 @@ h1 {
     text-align: center;
 }
 
-a.active-head-tab {
+.active-head-tab {
     border-bottom: 1px solid;
 }
-
+.ur-choose-block{background: url("/img/ur-icon.png") 103% -47% no-repeat; }
 .answer-block.leading-normal {
     padding: 7px 3px;
     line-height: normal;
 }
 
 .question:not(.answer-opened) .answer-block {
-    display: none
-}
-
-.tab-block:not(.active-tab) {
     display: none
 }
 
@@ -303,6 +300,16 @@ a.active-head-tab {
     .car-slider::after {
         left: calc(35% + 350px);
     }
+    .ur-choose-block{background: url("/img/ur-icon.png") 103% -47% no-repeat; }
+}
+@media (max-width: 767px) {
+     .car-slider::after {
+        content: none;
+    }
+     .car-slider::before {
+        content: none;
+    }
+    .ur-choose-block{background: url("/img/ur-icon.png") 103% -47% no-repeat; }
 }
 
 @media (min-width: 1024px) {
