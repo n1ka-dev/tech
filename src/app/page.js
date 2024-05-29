@@ -1,14 +1,14 @@
 "use client"
 
 import Script from "next/script";
-import Faq from "./components/Faq"
-import News from "./components/News"
-import {useState} from "react";
+import Faq from "@/components/Faq"
+import News from "@/components/News"
+import { useState } from "react";
+import { menuItems } from  "./data/menu.js"
+import Accordeon from "@/components/Accordeon";
 
-export default function Page({}) {
-
-  const [menu, setMenu] = useState(false);
-
+export default function Page() {
+  const [menu, setMenu] = useState(menuItems);
   return (<div className="bg-black font-inter text-white overflow-x-hidden w-full">
         <header className="header overflow-hidden">
         <div className="container mx-auto">
@@ -19,14 +19,41 @@ export default function Page({}) {
                          loading="lazy" src="./img/logo.svg" title="Tehmagnat"/>
                 </a>
             </div>
+            {
+                menu && menu.map((info, index) => {
+                    return (
+                        <Accordeon
+                                key={index}
+                                title={info.title}
+                                url={info.url}
+                                classes={info.classes}
+                                child={info.child}
+                        />
+                )
+                })
+            }
             <div className="burger flex relative z-50" onClick={()=> setMenu(!menu)}>
                 <div className={`menu-icon ${menu ? 'open':''}`}><span></span><span></span><span></span></div>
                 {menu ?
-                <nav className="menu-items open absolute right-0 z-50">
+                <nav className="menu-items open absolute right-0 z-50 border-solid border border-borderColor rounded-2xl backdrop-blur-2xl text-lg">
                     <ul className="">
-                        <li><a href="#">Автопарк</a></li>
+                        <li className="has-child">
+                            <a href="#">Автопарк</a>
+                            <ul className="sub-menu text-sm">
+                                <li><a href="#">Пункт 1</a></li>
+                                <li><a href="#">Пункт 2</a></li>
+                                <li><a href="#">Пункт 3</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Условия</a></li>
-                        <li><a href="#">Правила</a></li>
+                        <li>
+                            <a href="#">Правила</a>
+                            <ul className="sub-menu text-sm">
+                                <li><a href="#">Пункт 1</a></li>
+                                <li><a href="#">Пункт 2</a></li>
+                                <li><a href="#">Пункт 3</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Отзывы</a></li>
                         <span className="shadow-line"></span>
                         <li><a href="#">Контакты</a></li>
@@ -69,8 +96,8 @@ export default function Page({}) {
         </div>
         <div className="car-slider relative">
             <div className="slide">
-                <div className="car-img absolute z-10 bottom-0 left-[15%] lg:left-[36%] w-full">
-                    <img alt="BMW X5" src="./img/car.png"/>
+                <div className="car-img absolute z-10 bottom-0 left-auto sm:left-[15%] lg:left-[36%] w-full w-[975px] h-[315px]"
+                     style={{background: `url(./img/car.png) left bottom no-repeat`}}>
                 </div>
             </div>
         </div>
