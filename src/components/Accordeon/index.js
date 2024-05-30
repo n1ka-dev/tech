@@ -1,20 +1,23 @@
 import { useState } from "react";
 // , icon, child
-export default function Accordeon({url, title, classes, child}){
+export default function Accordeon({url, title, classes, child, icon}){
     const [isActive, setIsActive] = useState(false);
     return (
-        <>
-        <li>
-            <a href={url} className={classes}>{title}</a>
-            <span  onClick={()=>setIsActive(!isActive)}>{child ? isActive ? '<': '>': '' }</span>
-            <ul className={isActive ? '':'hidden'}>{
-                child && child.map(item =>
-                    <li>
-                        <a href={item.url}>{item.title}</a>
-                    </li>
-                )
-            }
-            </ul>
-        </li>
-        </>)
+        <li className="">
+            <div className={`flex justify-between items-center relative`}>
+                <a href={url} className={classes}>
+                    { icon ? <img alt="VK" src={icon}/> : '' }
+                    { title }
+                </a>
+                <span  onClick={()=>setIsActive(!isActive)} className={` ${child ? isActive ? 'menu-arrow open':'menu-arrow':''}`}></span>
+            </div>
+            {child ?
+                <ul className={isActive ? '':'hidden'} >
+                    {child.map(item =>
+                    <li key={item.id}><a href={item.url}>{item.title}</a></li>
+                )}
+                </ul>
+                : null}
+
+        </li>)
 }

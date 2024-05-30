@@ -97,7 +97,6 @@ input{color: #000}
 }
 
 .menu-items {
-    display: none;
     top: 100%;
     padding: 20px 25px 20px 24px;
     margin: 6px -8px 0 6px;
@@ -107,24 +106,29 @@ input{color: #000}
 }
 .menu-items ul ul{margin: 5px}
 .menu-items ul ul a{color: rgb(255 255 255 / 80%)}
-.menu-items.open {
-    display: block
-}
 
 .menu-items li a {
     display: block;
-    padding: 2px 7px 7px 1px;
+    padding: 2px 7px 7px 2px;
 }
 
 .menu-items li a:hover {
     text-decoration: underline
 }
-
-.shadow-line {
+.menu-arrow{width: 10px; height: 18px;
+    background: url("/img/arrow-right.png"); cursor: pointer;
+}
+.shadow-line{margin-top:15px; }
+.shadow-line:before {
+    content: "";
     display: block;
     height: 1px;
     background-color: #D9D9D9;
     margin: 5px 0 13px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
 }
 
 h1 {

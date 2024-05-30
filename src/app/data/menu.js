@@ -7,22 +7,22 @@
           'icon':'',
           'child':[
               {
-                  'id':1.1,
+                  'id':100,
                   'url': '#',
                   'title': 'Пункт 1',
                   'classes': '',
                   'icon':'',
               },
               {
-                  'id':1.2,
+                  'id':200,
                   'url': '#',
                   'title': 'Пункт 1',
                   'classes': '',
                   'icon':'',
               },
               {
-                  'id':1.3,
-                  'url': '#',
+                  'id':300,
+                  'url': '#test300',
                   'title': 'Пункт 1',
                   'classes': '',
                   'icon':'',
@@ -37,31 +37,38 @@
           'icon':''
       },
       {
-          'id':2,
+          'id':3,
           'url': '#',
           'title': 'Правила',
           'classes': '',
           'icon':''
       },
       {
-          'id':3,
+          'id':4,
           'url': '#',
           'title': 'Отзывы',
           'classes': '',
           'icon':''
       },
       {
-          'id':4,
-          'url': '#',
+          'id':5,
+          'url': '',
           'title': 'Контакты',
-          'classes': '',
+          'classes': 'shadow-line',
           'icon':''
       },
       {
-          'id':5,
-          'url': '#',
-          'title': '8 (800) 600-98-94',
+          'id':6,
+          'url': 'https://vk.com/#',
+          'title': '',
           'classes': '',
-          'icon':''
+          'icon':'img/vk-white.svg'
+      },
+      {
+          'id':7,
+          'url': 'tel:88006009894',
+          'title': '8 (800) 600-98-94',
+          'classes': 'text-nowrap',
+          'icon': ''
       }
   ]

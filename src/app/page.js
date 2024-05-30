@@ -8,7 +8,8 @@ import { menuItems } from  "./data/menu.js"
 import Accordeon from "@/components/Accordeon";
 
 export default function Page() {
-  const [menu, setMenu] = useState(menuItems);
+  const [menu, setMenu] = useState(false);
+
   return (<div className="bg-black font-inter text-white overflow-x-hidden w-full">
         <header className="header overflow-hidden">
         <div className="container mx-auto">
@@ -19,46 +20,26 @@ export default function Page() {
                          loading="lazy" src="./img/logo.svg" title="Tehmagnat"/>
                 </a>
             </div>
-            {
-                menu && menu.map((info, index) => {
-                    return (
-                        <Accordeon
-                                key={index}
-                                title={info.title}
-                                url={info.url}
-                                classes={info.classes}
-                                child={info.child}
-                        />
-                )
-                })
-            }
+
             <div className="burger flex relative z-50" onClick={()=> setMenu(!menu)}>
                 <div className={`menu-icon ${menu ? 'open':''}`}><span></span><span></span><span></span></div>
                 {menu ?
-                <nav className="menu-items open absolute right-0 z-50 border-solid border border-borderColor rounded-2xl backdrop-blur-2xl text-lg">
-                    <ul className="">
-                        <li className="has-child">
-                            <a href="#">Автопарк</a>
-                            <ul className="sub-menu text-sm">
-                                <li><a href="#">Пункт 1</a></li>
-                                <li><a href="#">Пункт 2</a></li>
-                                <li><a href="#">Пункт 3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Условия</a></li>
-                        <li>
-                            <a href="#">Правила</a>
-                            <ul className="sub-menu text-sm">
-                                <li><a href="#">Пункт 1</a></li>
-                                <li><a href="#">Пункт 2</a></li>
-                                <li><a href="#">Пункт 3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Отзывы</a></li>
-                        <span className="shadow-line"></span>
-                        <li><a href="#">Контакты</a></li>
-                        <li><a className="text-nowrap" href="tel:88006009894">8 (800) 600-98-94</a></li>
-                        <li><a href="https://vk.com/#"><img alt="VK" src="img/vk-white.svg"/></a></li>
+                <nav onClick={(event) => event.stopPropagation()} className="menu-items open absolute right-0 z-50 border-solid border border-borderColor rounded-2xl backdrop-blur-2xl text-lg">
+                     <ul className="">
+                        {
+                            menuItems.map((info, index) => {
+                                return (
+                                    <Accordeon
+                                            key={info.id}
+                                            title={info.title}
+                                            url={info.url}
+                                            classes={info.classes}
+                                            child={info.child}
+                                            icon={info.icon}
+                                    />
+                            )
+                            })
+                        }
                     </ul>
                 </nav>
                      : null}
