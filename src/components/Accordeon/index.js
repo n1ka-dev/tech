@@ -1,6 +1,6 @@
 import { useState } from "react";
 // , icon, child
-export default function Accordeon({url, title, classes, child, icon}){
+export default function Accordeon({url, title, classes, child, icon, action}){
     const [isActive, setIsActive] = useState(false);
     return (
         <li className="">

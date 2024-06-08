@@ -70,12 +70,12 @@ const Faq = ({}) => {
     return (
     <div className="faq-blocks mt-[4.5rem]">
         <div className="head-faq-block flex justify-between mb-10">
-            <h3 className="uppercase font-dela text-5xl">FAQ</h3>
+            <h3 className="uppercase font-dela text-xl sm:text-2xl md:text-5xl">FAQ</h3>
             <a href="#">О компании<span
                     className="detail inline-block relative align-middle ml-3 w-[50px] h-[50px] colorful-shadow  rounded-full"></span></a>
         </div>
          <div className="questions-block">
-            <div className="head-tabs flex space-x-10 mb-5">
+            <div className="head-tabs flex space-x-10 mb-5 overflow-x-scroll sm:overflow-auto">
                 {tab.map((item)=>
                     <button 
                         key={item.id} 
@@ -97,8 +97,8 @@ const Faq = ({}) => {
                     >
                         <div className={`question border-solid border-borderColor border rounded-2xl my-3 relative cursor-pointer bg-gradient${expanded === item.id ?' answer-opened' : ''}`}>
                             <div className="inner-faq-block inner-tab-block w-4/5 pb-4.5 px-3.5">
-                                <div className="head-question text-h-faq pt-4.5">{item.title}</div>
-                                <div className='answer-block' dangerouslySetInnerHTML={{__html:item.text}} />
+                                <div className="head-question text-lg sm:text-h-faq pt-4.5">{item.title}</div>
+                                <div className='answer-block pt-5' dangerouslySetInnerHTML={{__html:item.text}} />
                             </div>
                         </div>
                     </div>

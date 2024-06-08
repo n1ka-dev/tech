@@ -14,6 +14,18 @@ const news = [
         'title':'Ввоз автомобилей через таможню Владивостока пришел досанкционным значениям',
         'text':'В марте 2024 года физлица импортировали через таможню Владивостока 21 тысячу автомобилей, что сопоставимо с показателями досанкционного периода.',
      },
+    {   'id':1.1,
+        'theme': 'all_news',
+        'img_path': './img/img-news.png',
+        'title':'Ввоз автомобилей через таможню Владивостока пришел досанкционным значениям',
+        'text':'В марте 2024 года физлица импортировали через таможню Владивостока 21 тысячу автомобилей, что сопоставимо с показателями досанкционного периода.',
+     },
+    {   'id':1.2,
+        'theme': 'all_news',
+        'img_path': './img/img-news.png',
+        'title':'Ввоз автомобилей через таможню Владивостока пришел досанкционным значениям',
+        'text':'В марте 2024 года физлица импортировали через таможню Владивостока 21 тысячу автомобилей, что сопоставимо с показателями досанкционного периода.',
+     },
     {
         'id':2,
         'theme': 'cars',
@@ -54,13 +66,13 @@ const News = ({}) => {
     return (
     <div className="news-block mt-[5rem]">
        <div className="head-block flex justify-between mb-10 flex-wrap sm:flex-nowrap">
-            <h3 className="uppercase font-dela text-5xl flex">Новости компании</h3>
+            <h3 className="uppercase font-dela text-xl sm:text-2xl md:text-5xl flex mb-5">Новости компании</h3>
             <a className="flex items-center shrink-0 mt-54 sm:mt-0" href="#">Все новости<span
                     className="detail flex relative align-middle ml-3 w-[50px] h-[50px] colorful-shadow  rounded-full"></span></a>
 
        </div>
        <div className="section-news-blocks">
-            <div className="head-tabs flex space-x-10 mb-7 leading-8">
+            <div className="head-tabs hidden sm:flex space-x-10 mb-7 leading-8">
                 {tab.map((item)=>
                     <button 
                         key={item.id} 
@@ -75,10 +87,10 @@ const News = ({}) => {
                 )}
             </div>
             <div className="tabs-content">
-                <div className="tab-block flex space-x-7 xl:space-x-12 leading-normal active-tab mb-10">
+                <div className="tab-block flex space-x-0 sm:space-x-7 xl:space-x-12 leading-normal active-tab mb-10 flex-wrap sm:flex-nowrap">
                     {filters.map((item) =>
                         <div key={item.id}
-                             className={`border-solid border-borderColor border rounded-2xl answer-opened relative bg-gradient  w-1/3`}
+                             className={`border-solid border-borderColor border rounded-2xl answer-opened relative bg-gradient  w-full sm:w-1/3 mb-10`}
                              onClick={()=>handleChange(item.id)}
                         >
                             <div className="inner-tab-block pb-4.5 px-3.5">
