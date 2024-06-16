@@ -1,29 +1,3 @@
-// $('document').ready(function () {
-//     $('.menu-icon').click(function () {
-//         $(this).toggleClass('open');
-//         $(this).next('.menu-items').toggleClass('open');
-//     });
-//     $('.question').click(function () {
-//         $(this).toggleClass('answer-opened').toggleClass('rounded-full').toggleClass('rounded-2xl');
-//     });
-//     $('.head-tabs>a').click(function (e) {
-//         let parent_section = $(this).parent().parent();
-//         let href = $(this).attr('href');
-//         console.log(href)
-//         if (href == '#all') {
-//             parent_section.find('.tab-block').addClass('active-tab');
-//         } else {
-//             parent_section.find('.active-tab').removeClass('active-tab');
-//             parent_section.find(href).toggleClass('active-tab');
-//         }
-//         parent_section.find('.active-head-tab').removeClass('active-head-tab');
-//         $(this).toggleClass('active-head-tab');
-//
-//
-//         e.preventDefault();
-//     });
-// })
-
 var x, i, j, l, ll, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName("custom-select");
@@ -76,7 +50,9 @@ for (i = 0; i < l; i++) {
         closeAllSelect(this);
         this.nextSibling.classList.toggle("select-hide");
         this.classList.toggle("select-arrow-active");
+        selElmnt.dispatchEvent(new Event('change'));
     });
+
 }
 
 function closeAllSelect(elmnt) {

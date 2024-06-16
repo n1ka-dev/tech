@@ -47,6 +47,17 @@ body {
         src: url('/fonts/DelaGothicOne-Regular.woff2') format('woff2');
     }
 }
+body{min-height: 100vh}
+.bc-item::before{content: url("/img/arrow-right.png"); transform: rotate(180deg);display: inline-block; margin-right: 15px; }
+.bg-choose-city{
+    height: 920.86px;
+    background: linear-gradient(130.25deg, rgba(0, 0, 0, 0.5) 3.65%, rgba(102, 102, 102, 0.5) 102.08%);
+    backdrop-filter: blur(15px);
+    transform: rotate(-7.86deg);
+    position: absolute;
+    left: -100%;
+    right: -100%;
+   }
 input{color: #000}
 .menu-icon {
     margin: 11px 1px auto;
@@ -339,8 +350,7 @@ h1 {
     }
 
     .select-items div, .select-selected {
-        line-height: normal;
-        height: 55px
+        line-height: 30px;
     }
 }
 

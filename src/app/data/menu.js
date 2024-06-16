@@ -1,7 +1,7 @@
   export const menuItems = [
       {
           'id':1,
-          'url': '#',
+          'url': '/catalog/',
           'title': 'Автопарк',
           'classes': '',
           'icon':'',
