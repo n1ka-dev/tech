@@ -18,7 +18,7 @@ export default function Catalog() {
                      <Rent />
                      <Faq />
                     <MapFooter />
-                    <Footer />
+                    <Footer /> 
                 </div>
             </main>
 
