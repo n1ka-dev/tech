@@ -11,7 +11,7 @@ export default function HeaderLine(){
 					<div className="header_logo content-center">
 						<a href="/">
 							<img alt="Логотип Tehmagnat - прокат автомобилей" decoding="async"
-								 loading="lazy" src="./img/logo.svg" title="Tehmagnat"/>
+								 loading="lazy" src="../../img/logo.svg" title="Tehmagnat"/>
 						</a>
 					</div>
 					<div className="burger flex relative z-50" onClick={()=> setMenu(!menu)}>

@@ -9,7 +9,7 @@ export default function Footer(){
                           <div className="footer_logo mb-10">
                               <a href="/">
                                   <img alt="Логотип Tehmagnat - прокат автомобилей" decoding="async"
-                                       loading="lazy" src="./img/logo.svg" title="Tehmagnat"/>
+                                       loading="lazy" src="../../img/logo.svg" title="Tehmagnat"/>
                               </a>
                           </div>
                           <p className="copyright w-full py-4 hidden sm:block">
