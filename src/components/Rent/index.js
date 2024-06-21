@@ -24,13 +24,13 @@ export default function Rent(){
                     <h4 className="uppercase font-dela text-xl">Какую машину вы хотите?</h4>
                     <form action="#rent-car" method="GET">
                         <input
-                            className="bg-select rounded-full border-solid border-borderColor border px-3 py-3 my-3 w-full"
+                            className="bg-select bg-black rounded-full border-solid border-borderColor border px-3 py-3 my-3 w-full"
                             type="text"/>
                         <input
-                            className="bg-select rounded-full border-solid border-borderColor border px-3 py-3 my-3 w-full"
+                            className="bg-select bg-black rounded-full border-solid border-borderColor border px-3 py-3 my-3 w-full"
                             type="text"/>
                         <input
-                            className="bg-select rounded-full border-solid border-borderColor border px-3 py-3 my-3 w-full"
+                            className="bg-select bg-black rounded-full border-solid border-borderColor border px-3 py-3 my-3 w-full"
                             type="text"/>
                         <button
                             className="bg-white text-black py-3 px-10 rounded-full mt-2.5 w-full sm:w-auto">Далее

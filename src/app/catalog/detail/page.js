@@ -86,34 +86,103 @@ export default function CarDetail() {
                                             lg:border-b-0 sm:border-r lg:max-w-[313px] pr-10 pb-3 lg:pb-0">
                                     <div className="cond-block-content">
                                         <div className="text-4xl font-dela">5000 р</div>
-                                        <div className="mt-3.5">На день аренды водителю должно исполниться 21 год</div>
+                                        <div className="mt-3.5">При аренде на  2 суток</div>
                                     </div>
                                 </div>
                                 <div
                                     className="cond-block flex px-5.5  sm:w-1/2 border-solid border-borderColor border-b  lg:border-b-0 border-r-0 lg:border-r lg:max-w-[313px] pr-10 pb-3 lg:pb-0">
                                     <div className="cond-block-content">
                                         <div className="text-4xl font-dela">4900 р</div>
-                                        <div className="mt-3.5">Водительские права и стаж за рулем свыше 3 лет</div>
+                                        <div className="mt-3.5">При аренде на 3 дня</div>
                                     </div>
                                 </div>
                                 <div
                                     className="cond-block flex px-5.5 pb-3  sm:w-1/2 border-solid border-borderColor border-b sm:border-r sm:border-b-0 lg:max-w-[313px] pr-10">
                                     <div className="cond-block-content">
                                         <div className="text-4xl font-dela">4700 р</div>
-                                        <div className="mt-3.5">Минимальное время аренды 24 часа</div>
+                                        <div className="mt-3.5">При аренде 6-8 дней</div>
                                     </div>
                                 </div>
                                 <div className="cond-block flex px-5.5 sm:w-1/2 lg:max-w-[313px] pr-10">
                                     <div className="cond-block-content">
                                         <div className="text-4xl font-dela">4500 р</div>
-                                        <div className="mt-3.5">Лимит пробега 250 км в день</div>
+                                        <div className="mt-3.5">При аренде на 8 и более дней</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                         <div className="services">
+                             <div className="flex justify-between items-center py-10">
+                                 <div className="serv-options">
+                                     <div className="title-block text-xl font-dela">Дополнительные услуги: <i className="icon-arrow"></i></div>
+                                     <div className="block-options border-solid border-borderColor border rounded-2xl p-5 my-5 flex">
+                                         <div className="serv-part">
+                                             <label className="block my-3" htmlFor="ch-seat">
+                                                 <input type="checkbox" name="ch-seat" id="ch-seat"/>
+                                                 <span className="checkbox__checkmark"></span>
+                                                 <span className="checkbox__body">Детское кресло 100р/сутки</span>
+                                             </label>
+                                             <label className="block my-3" htmlFor="ph-holder">
+                                                 <input type="checkbox" name="ph-holder" id="ph-holder"/>
+                                                 <span className="checkbox__checkmark"></span>
+                                                 <span className="checkbox__body">Держатель 10р/сутки</span>
+                                             </label>
+                                             <label className="block my-3" htmlFor="other-city">
+                                                 <input type="checkbox" name="other-city" id="other-city"/>
+                                                 <span className="checkbox__checkmark"></span>
+                                                 <span className="checkbox__body">Выезд в другой город - 5000р</span>
+                                             </label>
+                                         </div>
+                                         <div className="serv-part ml-5">
+                                             <label className="block my-3" htmlFor="ch-seat1">
+                                                 <input type="checkbox" name="ch-seat1" id="ch-seat1"/>
+                                                 <span className="checkbox__checkmark"></span>
+                                                 <span className="checkbox__body">Детское кресло 100р/сутки</span>
+                                             </label>
+                                             <label className="block my-3" htmlFor="ph-holder1">
+                                                 <input type="checkbox" name="ph-holder1" id="ph-holder1"/>
+                                                 <span className="checkbox__checkmark"></span>
+                                                 <span className="checkbox__body">Держатель 10р/сутки</span>
+                                             </label>
+                                             <label className="block my-3" htmlFor="other-city1">
+                                                 <input type="checkbox" name="other-city1" id="other-city1"/>
+                                                 <span className="checkbox__checkmark"></span>
+                                                 <span className="checkbox__body">Выезд в другой город - 5000р</span>
+                                             </label>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div className="call-us">
+                            <div className="flex justify-between items-center py-10">
+                                <div className="descr-call-us-wrap font-dela text-lg w-1/4">
+                                    Хотите узнать подробнее или забронировать авто? Позвоните нам по телефону <span className="block">8 (800) 600-98-94</span>
+                                </div>
+                                <div className="choose-date flex items-center">
+                                    <div className="date-period flex">
+                                        <div className="date-picker-wrap relative m-3">
+                                            <input type="text" className="date-picker relative bg-gradientInput bg-black rounded-full border-solid border-borderColor border p-3 w-full"
+                                                   name="date-from"
+                                                   placeholder="20.06.2024"
+                                            />
+                                        </div>
+                                         <div className="date-picker-wrap relative m-3">
+                                            <input type="text" className="date-picker relative bg-gradientInput bg-black rounded-full border-solid border-borderColor border p-3 w-full"
+                                                   name="date-to"
+                                                   placeholder="25.06.2024"
+                                            />
+                                         </div>
+                                    </div>
+                                    <div className="call-us-btn-wrap">
+                                        <a className="block rounded-full bg-white text-black text-center py-3 px-8" href="#">Забронировать</a>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
                      </div>
-                    <Footer /> 
                 </div>
+                 <Footer />
             </main>
 
         </>

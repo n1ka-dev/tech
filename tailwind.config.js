@@ -50,6 +50,7 @@ module.exports = {
       },
       backgroundImage: {
         'gradient': 'linear-gradient(277.59deg, rgba(43, 41, 41, 0.95) 72.57%, rgba(117, 107, 107, 0.95) 144.11%)',
+        'gradientInput': 'linear-gradient(277.59deg, rgba(61, 61, 61, 0.2) 20.4%, rgba(167, 167, 167, 0.2) 144.11%)',
         'select': 'linear-gradient(97.59deg, rgba(61, 61, 61, 0.2) -44.11%, rgba(167, 167, 167, 0.2) 79.6%)'
       },
       maxWidth: {

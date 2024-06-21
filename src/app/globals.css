@@ -323,6 +323,79 @@ h1 {
 .bg-vk {
     background: url('/img/vk-black.svg') no-repeat center center #D7D7D7;
 }
+.date-picker-wrap::after{
+    content: url("/img/calendar.svg");
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    height: 26px;
+    margin: auto ;
+    z-index: 5;
+}
+
+.serv-options .title-block::after {
+    content: url("/img/select_arrow-serv.svg");
+    padding-left: 15px;
+}
+.serv-options label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.serv-options label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.serv-options label input:checked ~ .checkbox__checkmark {
+  background-color: #eee;
+}
+.serv-options label input:checked ~ .checkbox__checkmark:after {
+  transform: scale(1);
+}
+.serv-options label input:checked ~ .checkbox__body {
+  font-weight: bold;
+}
+.serv-options label:hover input ~ .checkbox__checkmark {
+  background-color: #eee;
+
+}
+.serv-options label:hover input:checked ~ .checkbox__checkmark {
+  background-color: #eee;
+}
+.serv-options label .checkbox__checkmark {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: transparent;
+  transition: background-color 0.25s ease;  border: 1px solid #717171;    border-radius: 6px;
+}
+.serv-options label .checkbox__checkmark:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 22px;
+    height: 22px;
+    display: block;
+    background-color: #BF7FFF;
+    transform: scale(0);
+    transition: transform 0.25s ease;
+    border: 1px solid #717171;
+    border-radius: 6px;
+}
+.serv-options label .checkbox__body {
+  transition: font-weight 0.25s ease;
+}
 
 @media (max-width: 1024px) {
     .car-slider::after {
