@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { menuItems } from  "../../app/data/menu.js"
-
+import Link from 'next/link';
 import Accordeon from "@/components/Accordeon";
 
 export default function HeaderLine(){
@@ -9,10 +9,10 @@ export default function HeaderLine(){
         <div className="container mx-auto">
 				<div className="header-line  flex justify-between pt-7">
 					<div className="header_logo content-center">
-						<a href="/">
+						<Link href="/">
 							<img alt="Логотип Tehmagnat - прокат автомобилей" decoding="async"
 								 loading="lazy" src="../../img/logo.svg" title="Tehmagnat"/>
-						</a>
+						</Link>
 					</div>
 					<div className="burger flex relative z-50" onClick={()=> setMenu(!menu)}>
 						<div className={`menu-icon ${menu ? 'open':''}`}><span></span><span></span><span></span></div>

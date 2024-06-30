@@ -1,16 +1,19 @@
 "use client"
-import {useState} from "react";
+import React, {useState} from "react";
+import {getCookie, hasCookie, setCookie} from "cookies-next";
 export default function ChooseCity(){
-    let savedCity = typeof window !== 'undefined' ?window.localStorage.getItem('city'):'';
-    const [city, setCity] = useState(savedCity);
+    const [city, setCity] = useState(true);
     const handle = (e) => {
-        setCity(e.target.value);
-        localStorage.setItem('city', e.target.value);
+        setCookie('city', e.target.value);
     }
-    return ( !city ? <div className="choose-city fixed flex flex-wrap top-0 bottom-0 left-0 right-0 overflow-hidden items-center justify-center z-50">
-              <div className="bg-choose-city"></div>
+    React.useEffect(()=>{
+        setCity(hasCookie('city'))
+    }, [city])
+    if(!city){
+        return (<div className="choose-city fixed flex flex-wrap top-0 bottom-0 left-0 right-0 overflow-hidden items-center justify-center z-50">
+                  <span className="bg-choose-city"></span>
                   <div className="inner-choose text-center">
-                      <div className="h1 uppercase text-5xl relative font-dela">Выберите город</div>
+                      <p className="h1 uppercase text-5xl relative font-dela">Выберите город</p>
                       <div className="mt-12 w-auto inline-block">
                            <div className="custom-select relative mt-4 m-auto">
                                 <select className="text-black hidden" id="ch-city" name="city" onChange={handle}>
@@ -22,5 +25,9 @@ export default function ChooseCity(){
                             </div>
                       </div>
                   </div>
-              </div>:"")
+              </div>
+        )
+    }else {
+        return null
+    }
 }

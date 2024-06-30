@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ChooseCity from "@/components/ChooseCity";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-black font-inter text-white overflow-x-hidden w-full">{children}</body>
+      <body className="bg-black font-inter text-white overflow-x-hidden w-full">
+        {children}
+        <ChooseCity />
+      </body>
     </html>
   );
 }

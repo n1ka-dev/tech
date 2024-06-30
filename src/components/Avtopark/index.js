@@ -45,7 +45,7 @@ export default function Accordeon({url, title, classes, child, icon, action}){
 				<a className="apply-filter  w-[50px] h-[50px] colorful-shadow inline-block relative  rounded-full" href="#"/>
 			</div>
 		</div>
-		<a className="see-all rounded-full mt-3 p-3 content-center text-center bg-gradient" href="#all">Посмотреть все машины</a>
+		<a className="see-all rounded-full mt-3 p-3 content-center text-center bg-gradient" href="/catalog">Посмотреть все машины</a>
 	</div>
 	<div className="cars-view flex justify-between items-center mt-16 flex-wrap">
 		<div className="card-car mb-10 bg-gradient border-solid border-borderColor border rounded-2xl overflow-hidden w-full lg:w-auto">

@@ -3,24 +3,35 @@
 import Script from "next/script";
 import Faq from "@/components/Faq"
 import News from "@/components/News"
-import ChooseCity from "@/components/ChooseCity";
 import HeaderLine from "@/components/HeaderLine";
 import Avtopark from "@/components/Avtopark";
 import Rent from "@/components/Rent";
 import MapFooter from "@/components/MapFooter";
 import Footer from "@/components/Footer";
+import {useState} from "react";
 
 
 function UrChoose() {
-    return <div
-        className="ur-choose-block pb-[250px] sm:pb-10 mb-10 px-7 sm:px-12 py-3 bg-gradient border-solid border-borderColor border rounded-2xl overflow-hidden mt-4">
-        <h3 className="uppercase font-dela leading-relaxed text-lg sm:text-2xl xl:text-3xl mt-7 tracking-widest">Выбор
-            машины для юридического лица</h3>
-        <a className="relative flex pr-50 inline-block items-center mt-7 text-base tracking-2.5" href="#">Индивидуальное
-            согласование
-            <span
-                className="detail inline-block relative align-middle ml-8 sm:ml-3 w-[50px] h-[50px] colorful-shadow rounded-full shrink-0"></span></a>
-    </div>;
+    const [popup, setPopUp] = useState(false);
+    return (
+        <>
+        {
+            popup ?
+                <div className="popup choose-city fixed flex flex-wrap top-0 bottom-0 left-0 right-0 overflow-hidden items-center justify-center z-50">
+                    <div className="bg-blend-overlay"></div>
+                    popup
+                </div>
+                : null
+        }
+            <div
+            className="ur-choose-block pb-[250px] sm:pb-10 mb-10 px-7 sm:px-12 py-3 bg-gradient border-solid border-borderColor border rounded-2xl overflow-hidden mt-4">
+            <h3 className="uppercase font-dela leading-relaxed text-lg sm:text-2xl xl:text-3xl mt-7 tracking-widest">Выбор
+                машины для юридического лица</h3>
+            <button className="relative flex pr-50 inline-block items-center mt-7 text-base tracking-2.5" onClick={()=> setPopUp(true)}>Индивидуальное
+                согласование
+                <span
+                    className="detail inline-block relative align-middle ml-8 sm:ml-3 w-[50px] h-[50px] colorful-shadow rounded-full shrink-0"></span></button>
+        </div></>)
 }
 
 function LeasingCond() {
@@ -61,7 +72,7 @@ function LeasingCond() {
 }
 
 export default function Page() {
-  return (<div className="">
+  return (<div className="body">
           <header className="header overflow-hidden">
               <HeaderLine/>
               <div className="top-banner relative">
@@ -115,7 +126,6 @@ export default function Page() {
               </div>
           </main>
           <Footer />
-          <ChooseCity/>
           <Script src="./js/js.js"/>
       </div>
 
