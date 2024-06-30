@@ -17,9 +17,26 @@ function UrChoose() {
         <>
         {
             popup ?
-                <div className="popup choose-city fixed flex flex-wrap top-0 bottom-0 left-0 right-0 overflow-hidden items-center justify-center z-50">
-                    <div className="bg-blend-overlay"></div>
-                    popup
+                <div className="popup fixed flex flex-wrap top-0 bottom-0 left-0 right-0 overflow-hidden items-center justify-center z-50"  onClick={()=>setPopUp(!popup)}>
+
+                    <div className="popup-form relative bg-formGradient pt-12 py-10 px-8 border-solid border-borderColor border rounded-2xl max-w-[645px]"   onClick={(event) => event.stopPropagation()}>
+                        <div className="menu-icon open right-6 top-6 absolute"><span></span><span></span><span></span></div>
+                        <div className="title font-dela uppercase leading-10">
+                            <p className="text-3xl mb-6">Выбор автомобиля для юридического лица</p>
+                            <p className="text-xl">оставьте ваши данные</p>
+                        </div>
+                        <form action="#" className="text-xl">
+                            <input type="text" name="inn" placeholder="ИНН организации"
+                                   className="bg-gradientInput border-solid border-borderColor border rounded-full bg-transparent p-2.5 px-5 block my-2.5 w-full"/>
+                            <input type="text" name="fio" placeholder="ФИО"
+                                   className="bg-gradientInput border-solid border-borderColor border rounded-full bg-transparent p-2.5 px-5 block my-2.5 w-full"/>
+                            <input type="tel" name="tel" placeholder="телефон"
+                                   className="bg-gradientInput border-solid border-borderColor border rounded-full bg-transparent p-2.5 px-5 block my-2.5 w-full"/>
+                            <input type="email" name="email" placeholder="почта"
+                                   className="bg-gradientInput border-solid border-borderColor border rounded-full bg-transparent p-2.5 px-5 block my-2.5 w-full"/>
+                            <input type="submit" value="Отправить" className="block rounded-full bg-white text-black px-5 py-2.5 mb-4 w-full"/>
+                        </form>
+                    </div>
                 </div>
                 : null
         }
@@ -126,7 +143,6 @@ export default function Page() {
               </div>
           </main>
           <Footer />
-          <Script src="./js/js.js"/>
       </div>
 
   )}

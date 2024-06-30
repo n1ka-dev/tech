@@ -15,7 +15,7 @@ export default function HeaderLine(){
 						</Link>
 					</div>
 					<div className="burger flex relative z-50" onClick={()=> setMenu(!menu)}>
-						<div className={`menu-icon ${menu ? 'open':''}`}><span></span><span></span><span></span></div>
+						<div className={`menu-icon relative my-[11px] mx-auto ${menu ? 'open':''}`}><span></span><span></span><span></span></div>
 							{menu ?
 							<nav className="menu-items fixed  z-50 border-solid border border-borderColor backdrop-blur-2xl text-lg right-0 max-w-full pl-10 inset-y-0 sm:absolute sm:block sm:max-w-fit sm:top-full sm:bottom-auto sm:my-3 sm:-mr-3 sm:rounded-2xl">
 								<div className={`back-btn-menu mb-5 sm:hidden ${menu ? 'open':''}`}>Назад</div>

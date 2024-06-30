@@ -60,11 +60,9 @@ body{min-height: 100vh}
    }
 input{color: #000}
 .menu-icon {
-    margin: 11px 1px auto;
     width: 20px;
     height: 14px;
     cursor: pointer;
-    position: relative;
 }
 
 .menu-icon span {
@@ -80,7 +78,7 @@ input{color: #000}
 .menu-icon span:first-child {
     top: 0;
 }
-
+.bg-gradientInput{color: white}
 .menu-icon span:nth-child(2) {
     top: 6px;
 }
